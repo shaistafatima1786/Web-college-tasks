@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* Align elements vertically */
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .morning {
+            background-image: url('./morning.webp');
+        }
+        
+        .afternoon {
+            background-image: url('./afternoon.webp');
+        }
+        
+        .night {
+            background-image: url('./night.jpg');
+        }
+        
+        #greeting {
+            font-size: 100px;
+            margin-bottom: 20px; /* Add space below greeting */
+        }
+
+        #datetime {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="greeting"></div>
+    <div id="datetime"></div>
+
+    <script>
+        function setBackgroundImageAndGreeting() {
+            var currentDate = new Date();
+            var currentSecond = currentDate.getSeconds() % 30; // Cycle every 30 seconds
+            var greeting;
+            var body = document.body;
+
+            if (currentSecond < 10) {
+                body.className = 'morning';
+                greeting = 'Good Morning';
+            } else if (currentSecond >= 10 && currentSecond < 20) {
+                body.className = 'afternoon';
+                greeting = 'Good Afternoon';
+            } else {
+                body.className = 'night';
+                greeting = 'Good Night';
+            }
+
+            if (currentSecond === 29) { // Reset cycle after "Good Night"
+                setTimeout(setBackgroundImageAndGreeting, 1000); // Delay restart to prevent immediate rerun
+                return;
+            }
+
+            document.getElementById('greeting').innerText = greeting;
+            document.getElementById('datetime').innerText = currentDate.toLocaleString();
+        }
+
+        setBackgroundImageAndGreeting();
+
+        setInterval(setBackgroundImageAndGreeting, 1000); // Check every second
+    </script>  
+
+<!-- 
+    <div id="greeting"></div>
+    <div id="datetime"></div>
+    <script>
+        function setBackgroundImageAndGreeting() {
+            var currentDate = new Date();
+            var currentHour = currentDate.getHours();
+            var greeting;
+            var body = document.body;
+    
+            if (currentHour >= 6 && currentHour < 12) {
+                body.className = 'morning';
+                greeting = 'Good Morning';
+            } else if (currentHour >= 12 && currentHour < 19) {
+                body.className = 'afternoon';
+                greeting = 'Good Afternoon';
+            } else {
+                body.className = 'night';
+                greeting = 'Good Night';
+            }
+    
+            document.getElementById('greeting').innerText = greeting;
+            document.getElementById('datetime').innerText =currentDate.toLocaleString();
+        }
+    
+        setBackgroundImageAndGreeting();
+    
+        setInterval(setBackgroundImageAndGreeting, 1000); // Check every second
+    </script> 
+     -->
+</body>
+</html>

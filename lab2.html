@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="./grid.css">
+  <style>
+    
+
+.grid-contain{
+  display:grid;
+  column-gap:0px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  background-color: rgb(245, 245, 245);
+  row-gap: 10px;
+
+}
+
+
+.nav-links a{
+  text-decoration:none ;
+  color: black ;
+  padding: 15px;
+}
+.nav-links{
+  display:flex;
+  list-style: none;
+  font-weight: bold;
+  align-items: center;
+  padding-left: 400px;
+  font-size: 20px;
+}
+.nav-links a:hover{
+  color:red;
+}
+
+.grid-items{
+  /* background-color: white; */
+  width:80%;
+  border: 3px solid black;
+  border-radius: 5px; 
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease-in-out;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+} 
+
+.grid-items img{
+  align-items: center;
+  overflow: hidden;
+}
+
+.header{
+grid-column-start: 1;
+grid-column-end:4 ;
+background-color: #ffeacf;
+text-align: center;
+color: rgb(0, 0, 0);
+display: flex;
+height: 35px;
+align-items: center;
+padding-left: 0px;
+padding:50px;
+}
+
+.paragraph{
+  grid-column-start: 1;
+  grid-column-end:4 ;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  padding: 20px;
+  margin-bottom: 50px;
+
+}
+
+.paragraph p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+
+.food-footer {
+    background-color: #ffeacf;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    grid-column-start: 1;
+    grid-column-end:4 ;
+}
+
+.footer-content {
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.food-footer a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.food-footer a:hover {
+    text-decoration: underline;
+}
+
+
+  
+  
+  </style>
+
+</head>
+<body>
+    
+    <div class="grid-contain">
+
+      <div class="header">
+        <h1>Delicious Foods</h1>
+        <div class="nav-links">
+          <a href="">RECIPES</a>
+          <a href="">POPULAR</a>
+          <a href="">MEATSEAFOOD</a>
+          <a href="">HEALTHYDIET</a>
+          <a href="">SEASONAL</a>
+          <a href="">CUISINE</a>
+        </div>
+      </div>
+
+        <div class="grid-items"><img src="https://static.finmail.com/wp-content/uploads/2021/07/04124653/1.jpg" alt="nepali food" height="280"/>
+          <div align="center"></div></div>
+
+        <div class="grid-items"><img src="https://www.altitudehimalaya.com/media/files/Blog/Food/Most-Popular-Nepalese-Foods.jpeg" alt="nepali food" height="280"/>
+          <div align="center"></div></div>
+
+        <div class="grid-items"><img src="https://nht-api.nepalhikingteam.com/media/attachments/Yomari.jpg" alt="nepali food" height="280"/>
+            <div align="center"></div></div>
+
+          <div class="paragraph">
+            <p>Obesity is often associated with eating junk food or food made with unhealthy ingredients and emphasizing taste or longevity over safety. Its opposite, healthy food, is a combination of many factors, which include food consumption patterns and monitoring your calorie intake.</p>
+            <p>Food is not just a necessity; it's an art, a celebration, and a journey of flavors that tantalize our taste buds. Each dish tells a story, carrying with it the rich heritage and cultural tapestry of its origin. From the sizzling street food stalls to the sophisticated fine dining experiences, food has the power to evoke emotions, create memories, and bring people together.</p>
+            <p>The symphony of colors, textures, and aromas in a well-prepared meal is a testament to the meticulous craftsmanship of chefs who transform simple ingredients into culinary masterpieces. Whether it's the comforting warmth of a bowl of homemade soup or the exquisite presentation of a gourmet dessert, every bite is an exploration of taste and a moment to savor.</p>
+            <p>Food transcends boundaries, connecting people across cultures and generations. It's a universal language that speaks to our senses, ignites our passion, and fosters a sense of community. As we indulge in the diverse world of cuisines, we embark on a gastronomic adventure, discovering the unique flavors that make each dish a work of art.</p>
+          </div>
+
+
+
+
+             <div class="food-footer">
+                <div class="footer-content">
+                    <p>&copy; 2023  Eat with Smile. All rights reserved.</p>
+                    <p>Address: 123 Delicious Street, Tastyville</p>
+                    <p>Email: info@restaurant.com</p>
+                </div>
+              </div>  
+
+    </div>
+    
+</body>
+</html>

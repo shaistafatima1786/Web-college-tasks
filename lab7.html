@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-image: url(./background.png);
+        background-size: cover;
+        overflow: hidden;
+    }
+    @keyframes sunRotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+   @keyframes moveRightToLeft {
+        0% { left: 100%; }
+        100% { left: -500px; } /* Adjust -500px to match the width of your car image */
+    }
+    #animated_sun {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        animation: sunRotate 20s infinite linear;
+    }
+    #animated_car {
+        position: absolute;
+        bottom: 50px;
+        transform: translateY(-50%);
+        animation: moveRightToLeft 10s linear infinite;
+    }
+    </style>
+
+</head>
+<body >
+    <div>
+        <img src="./sun.png" id="animated_sun">
+    </div>
+    <div>
+        <img src="./car.png" id="animated_car" width="300px" alt="Car">
+    </div>
+</body>
+</html>

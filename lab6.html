@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+            min-height: 1px; /* Fix for floated columns */
+        }
+        .header {
+            background-color: #ffbf00;
+            padding: 15px;
+        }
+        .aside {
+            background-color: #aa00ff;
+            padding-bottom: 260px;
+            text-align: center;
+            font-size: 14px;
+            padding-top: 10px;
+        }
+        .footer {
+            background-color: #00ff4c;
+            text-align: center;
+            font-size: 12px;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        /* For mobile phones: */
+        [class*="col-"] {
+            width: 100%;
+        }
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+            .col-m-1 {width: 8.33%;}
+            .col-m-2 {width: 16.66%;}
+            .col-m-3 {width: 25%;}
+            .col-m-4 {width: 33.33%;}
+            .col-m-5 {width: 41.66%;}
+            .col-m-6 {width: 50%;}
+            .col-m-7 {width: 58.33%;}
+            .col-m-8 {width: 66.66%;}
+            .col-m-9 {width: 75%;}
+            .col-m-10 {width: 83.33%;}
+            .col-m-11 {width: 91.66%;}
+            .col-m-12 {width: 100%;}
+        }
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+            .col-1 {width: 8.33%;}
+            .col-2 {width: 16.66%;}
+            .col-3 {width: 25%;}
+            .col-4 {width: 33.33%;}
+            .col-5 {width: 41.66%;}
+            .col-6 {width: 50%;}
+            .col-7 {width: 58.33%;}
+            .col-8 {width: 66.66%;}
+            .col-9 {width: 75%;}
+            .col-10 {width: 83.33%;}
+            .col-11 {width: 91.66%;}
+            .col-12 {width: 100%;}
+        }
+        /* Adjust container to cover full width */
+        .container {
+            width: 100%;
+            margin: 0;
+        }
+        /* Resizable menu styles */
+        #resizable div {
+            padding: 10px 10px;
+            height: 110px;
+            width: 300px;
+            background-color: #b4ede5;
+            transition: height 0.3s ease-in-out, background-color 0.3s;
+        }
+        #resizable div:hover {
+            background-color: #f1a998;
+            height: 300px;
+            transition: height 0.6s ease-in-out, background-color 0.6s;
+        }
+        nav ul li {
+            visibility: hidden;
+            list-style: none;
+            padding-top: 10px;
+        }
+        nav ul:hover li {
+            visibility: visible;
+        }
+        #resizable li:hover {
+            color: black;
+            border: 1px solid yellow;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- Adjusted container -->
+    <div class="container">
+        <div class="header">
+            <h1>This is header</h1>
+        </div>
+        <div class="row">
+            <!-- Replaced menu with resizable menu -->
+            <div id="resizable" class="col-3 col-m-3">
+                <div>
+                    <nav>
+                        <ul>
+                            HTML
+                            <li>HTML Forms</li>
+                            <li>HTML5</li>
+                            <li>HTML Graphics</li>
+                            <li>HTML Media</li>
+                            <li>HTML APIs</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            CSS
+                            <li>CSS3</li>
+                            <li>CSS Layout</li>
+                            <li>CSS Box Model</li>
+                            <li>CSS Responsive</li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <nav>
+                        <ul>
+                            JAVASCRIPT
+                            <li>JS Forms</li>
+                            <li>JS Objects</li>
+                            <li>JS Functions</li>
+                            <li>JS HTML DOM</li>
+                            <li>JS Browser BOM</li>
+                            <li>JS AJAX</li>
+                            <li>JS JSON</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- End of resizable menu -->
+            <div class="col-6 col-m-9">
+                <h1>Title</h1>
+                <p>Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text Text text Text Text Text Text Text Text Text Text Text   </p>
+            </div>
+            <div class="col-3 col-m-12">
+                <div class="aside">
+                    <h2>Another side contents</h2>
+                    <p>Include some text here</p>
+                    <h2>Another side contents</h2>
+                    <p>Include some text here</p>
+                    <h2>Another side contents</h2>
+                    <p>Include some text here</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p>Footer</p>
+        </div>
+    </div>
+</body>
+</html>
